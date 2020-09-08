@@ -7,7 +7,7 @@ export const TodoList = () => {
     const [state, dispatch] = useReducer(reducer, todos);
 
     return (
-        <div>
+        <div className="container">
             <TodoForm dispatch={dispatch} />
             {state.map(todo => {
                 return <Todo todo={todo} dispatch={dispatch} key={todo.id} />

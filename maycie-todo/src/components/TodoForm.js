@@ -11,6 +11,7 @@ export const TodoForm = ({dispatch}) => {
       e.preventDefault();
       dispatch({
         type: 'AddTodo',
+        payload: [tasks]
       });
     };
   
@@ -24,8 +25,13 @@ export const TodoForm = ({dispatch}) => {
     return (
         <div>
         <form onSubmit={submitForm}>
-          <label>Todo
-            <input name='todo' onChange={handleChanges} value={tasks} id={Date.now()} />
+          <label>
+            <input 
+              name='todo'
+              placeholder="Add a Task" 
+              onChange={handleChanges} 
+              value={tasks} 
+              id={Date.now()} />
           </label>
           <button>Add Task</button>
           <button onClick={clearCompleted}>Clear Completed</button>
